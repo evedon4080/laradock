@@ -1,19 +1,40 @@
 {
-	"authHost": "localhost",
+	"authHost": "https://app-burdock.docker",
 	"authEndpoint": "/broadcasting/auth",
-	"clients": [],
+	"clients": [
+		{
+			"appId": "b2f20c4fbd1cc0bb",
+			"key": "304b12fae15d5a32bdecd07ad7f2c2e1"
+		}
+	],
 	"database": "redis",
 	"databaseConfig": {
 		"redis": {
-			"port": "6379",
-			"host": "redis"
+			"host": "redis",
+			"port": 6379
+		},
+		"sqlite": {
+			"databasePath": "/database/laravel-echo-server.sqlite"
 		}
 	},
 	"devMode": true,
 	"host": null,
 	"port": "6001",
-	"protocol": "http",
+	"protocol": "https",
 	"socketio": {},
-	"sslCertPath": "",
-	"sslKeyPath": ""
+	"secureOptions": 67108864,
+	"sslCertPath": "/usr/src/app/ssl/app-burdock.docker.pem",
+	"sslKeyPath": "/usr/src/app/ssl/app-burdock.docker-key.pem",
+	"sslCertChainPath": "",
+	"sslPassphrase": "",
+	"subscribers": {
+		"http": true,
+		"redis": true
+	},
+	"apiOriginAllow": {
+		"allowCors": true,
+		"allowOrigin": "https://app-burdock.docker",
+		"allowMethods": "GET, POST",
+		"allowHeaders": "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
+	}
 }
